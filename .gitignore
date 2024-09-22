@@ -99,3 +99,50 @@ docker-compose.override.yml
 Thumbs.db
 chatgptcontext
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Logs
+*.log
+
+# Data files
+/data/
+models/*
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Test Coverage
+.coverage
+coverage/
