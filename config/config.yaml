@@ -1,0 +1,20 @@
+# config/config.yaml
+
+project_name: "Autonomous SaaS Application"
+version: "1.0.0"
+author: "Your Name"
+
+data_path: "./data/"
+model_path: "./models/"
+log_path: "./data/logs/"
+
+database:
+  host: localhost
+  port: 5432
+  user: user
+  password: pass
+  name: mydatabase
+
+logging:
+  level: DEBUG
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

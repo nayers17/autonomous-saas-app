@@ -1,0 +1,4 @@
+# config/gpu_config.yaml
+
+use_gpu: true
+gpu_device: "cuda:0"

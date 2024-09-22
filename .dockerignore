@@ -1,0 +1,29 @@
+# Exclude Git history
+.git
+.gitignore
+
+# Exclude Python virtual environments
+venv/
+env/
+__pycache__/
+
+# Exclude Dockerfile itself (if necessary)
+Dockerfile
+
+# Exclude IDE/editor directories
+.vscode/
+.idea/
+
+# Exclude large data or logs
+data/
+logs/
+*.log
+
+# Exclude node modules (if using Node.js)
+node_modules/
+
+# Ignore larger model directories until L40 GPU arrives
+models/base_models/code_generation/starcoder
+models/base_models/content_generation/Meta-Llama-3.1-8B-Instruct
+models/base_models/lead_generation/flan-t5-xl
+models/base_models/summarization_translation/t5-11b

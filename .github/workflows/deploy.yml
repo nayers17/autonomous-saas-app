@@ -1,0 +1,54 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Unit Tests
+        run: |
+          pytest
+
+      - name: Build Docker Image
+        run: |
+          docker build -t autonomous-saas-app .
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: your-region
+
+      - name: Login to ECR
+        run: |
+          aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
+
+      - name: Tag Docker Image
+        run: |
+          docker tag autonomous-saas-app:latest your-account-id.dkr.ecr.your-region.amazonaws.com/autonomous-saas-app:latest
+
+      - name: Push Docker Image to ECR
+        run: |
+          docker push your-account-id.dkr.ecr.your-region.amazonaws.com/autonomous-saas-app:latest
+
+      - name: Deploy to ECS
+        run: |
+          aws ecs update-service --cluster autonomous-saas-cluster --service autonomous-saas-service --force-new-deployment

@@ -1,0 +1,34 @@
+# requirements.txt
+
+# Core packages
+torch>=1.13.0
+transformers>=4.30.0
+sentence-transformers
+langchain
+prefect
+pandas
+numpy
+scikit-learn
+xgboost
+lightgbm
+catboost
+h2o
+datasets
+pydantic
+
+# For LLaMA 2
+accelerate
+bitsandbytes
+
+# Web framework
+fastapi
+uvicorn
+
+# Additional utilities
+python-dotenv
+pytest
+keybert
+
+pytest
+pytest-cov
+psycopg2-binary

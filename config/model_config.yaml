@@ -1,0 +1,66 @@
+models:
+  content_generation:
+    name: "meta-llama/Llama-3.1-8B-Instruct"
+    path: "./models/content_generation/"
+    framework: "PyTorch"  # Transition to PyTorch post initial rollout
+    vram_requirement: 8  # GB
+
+  customer_segmentation:
+    name: "sentence-transformers/all-MiniLM-L12-v2"
+    path: "./models/customer_segmentation/"
+    framework: "TensorFlow"
+    vram_requirement: 4  # GB
+
+  ad_optimization:
+    name: "gemini-1.5-flash"
+    path: "./models/ad_optimization/"
+    framework: "TensorFlow"
+    vram_requirement: 4  # GB
+
+  lead_generation:
+    name: "google/flan-t5-xl"
+    path: "./models/lead_generation/"
+    framework: "PyTorch"
+    vram_requirement: 8  # GB
+
+  email_personalization:
+    name: "gemini-1.5-flash"
+    path: "./models/email_personalization/"
+    framework: "TensorFlow"
+    vram_requirement: 4  # GB
+
+  seo_keyword_optimization:
+    name: "keybert"
+    path: "./models/seo_keyword_optimization/"
+    framework: "Scikit-learn"
+    vram_requirement: 2  # GB
+
+  social_media_sentiment:
+    name: "distilroberta-base"
+    path: "./models/social_media_sentiment/"
+    framework: "PyTorch"
+    vram_requirement: 4  # GB
+
+  ab_testing:
+    name: "h2o"
+    path: "./models/ab_testing/"
+    framework: "Scikit-learn"
+    vram_requirement: 2  # GB
+
+  code_generation:
+    name: "bigcode/starcoder"
+    path: "./models/code_generation/"
+    framework: "PyTorch"
+    vram_requirement: 6  # GB
+
+  data_analysis:
+    name: "catboost"
+    path: "./models/data_analysis/"
+    framework: "Scikit-learn"
+    vram_requirement: 2  # GB
+
+  summarization_translation:
+    name: "t5-lib"
+    path: "./models/summarization_translation/"
+    framework: "PyTorch"
+    vram_requirement: 6  # GB

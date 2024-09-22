@@ -1,0 +1,14 @@
+{
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+      "Name": "376129840486.dkr.ecr.us-west-2.amazonaws.com/autonomous-saas-app:latest",
+      "Update": "true"
+    },
+    "Ports": [
+      {
+        "ContainerPort": "8000"
+      }
+    ],
+    "Logging": "/var/log/nginx"
+  }
+  

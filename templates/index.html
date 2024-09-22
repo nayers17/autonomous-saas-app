@@ -1,0 +1,42 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous SaaS Application</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Autonomous SaaS Application</h1>
+    </header>
+    <main>
+        <div class="service-container">
+            <h2>Sentiment Analysis</h2>
+            <textarea id="sentiment-text" rows="4" cols="50" placeholder="Enter text here..."></textarea><br>
+            <button onclick="analyzeSentiment()">Analyze Sentiment</button>
+            <div id="sentiment-result"></div>
+        </div>
+        <!-- Repeat similar sections for Code Generation and Lead Generation -->
+    </main>
+    <script>
+        async function analyzeSentiment() {
+            const text = document.getElementById('sentiment-text').value;
+            const response = await fetch('/sentiment-analysis/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            document.getElementById('sentiment-result').innerHTML = `
+                <p><strong>Sentiment:</strong> ${data.sentiment}</p>
+                <p><strong>Confidence:</strong> ${data.confidence}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

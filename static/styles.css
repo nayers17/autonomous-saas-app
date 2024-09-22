@@ -1,0 +1,40 @@
+/* static/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#sentiment-result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #4caf50;
+    background-color: #dff0d8;
+    border-radius: 4px;
+}
